@@ -22,10 +22,13 @@ const getNodes = async (req, res, next) => {  try {
 const getNodesByCluster = async (req, res, next) => {
     try {
         const clusterId = req.params.id;
+
         const data= await Node.find({cluster:clusterId}).populate("cluster");
+
 // TODO: cluster == clusterId duten nodoak bilatu: filtroa populate
         res.json(data);
     } catch (err) {
+
         next(err);
     }
 };

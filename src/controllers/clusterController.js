@@ -13,10 +13,10 @@ const getClusters = async (req, res, next) => {
   try {
     // TODO: kluster guztiak lortu Mongoose erabiliz
     const data = await Cluster.find();
-    console.log("kkkk")
+
     res.json(data);
   } catch (err) {
-      console.log("kaixo")
+
     next(err);
   }
 };
